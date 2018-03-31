@@ -118,7 +118,7 @@ x3=base_model3.output
 concat_x=concatenate([x,x2,x3])
 x=Dropout(0.5)(concat_x)
 x=Dense(4096,activation='relu')(x)
-x=Dropout(0.5)(concat_x)
+x=Dropout(0.5)(x)
 x=Dense(4096,activation='relu')(x)
 pred=Dense(1,activation='sigmoid')(x)
 model=Model(inputs=[base_model.input,base_model2.input,base_model3.input],outputs=pred)
